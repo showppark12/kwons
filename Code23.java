@@ -46,7 +46,7 @@ public class Code23 {
 	static void saveAs(String fileName) {
 		PrintWriter outFile;
 		try {
-			outFile = new PrintWriter(new FileWriter(fileName));
+			outFile = new PrintWriter(new FileWriter(fileName));//fileWriter 객체를 생성한것 fileName이라는 매개변수로 받은 이름으로 생성 
 			for (int i=0; i<n; i++) {
 				outFile.println(words[i]+" "+count[i]);
 			}
@@ -62,9 +62,11 @@ public class Code23 {
 	}
 	private static void makeIndex(String fileName) {
 		//얘도 static 인건 아직 클래스와 객체..... static은 보통 쓰이지않아
+		//읽어오는거 
 		Scanner inFile;
 		try {
-			inFile = new Scanner( new File(fileName));
+			inFile = new Scanner( new File(fileName));//파일 관련 중요문장
+			//아 하 여기는 파일을 만드는게 아니라 있는 파일을 읽어오는 거구나 그니까 그냥 스캐너로 있는 파일을 읽어오는거였네!!
 			while(inFile.hasNext()) {
 				String str = inFile.next();
 				//여기서 입력받은 str이 첫번쨰로 입력받은건가 두번째로 입력받은건가 알아내야하는데 그업무도 다른 메소드로 넘겨 ~!
